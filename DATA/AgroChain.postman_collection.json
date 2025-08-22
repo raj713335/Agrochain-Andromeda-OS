@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "19e50116-444b-48d5-adc3-f533bbf3f86c",
+		"name": "AgroChain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8661183"
+	},
+	"item": [
+		{
+			"name": "IOT CO2 Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://blobstorageforco2level.blob.core.windows.net/co2/ca7c3f6d-e245-4646-82d7-d8017c683b1a/25/2022/05/21/13/56/dlcskwc7g5dfm",
+					"protocol": "https",
+					"host": [
+						"blobstorageforco2level",
+						"blob",
+						"core",
+						"windows",
+						"net"
+					],
+					"path": [
+						"co2",
+						"ca7c3f6d-e245-4646-82d7-d8017c683b1a",
+						"25",
+						"2022",
+						"05",
+						"21",
+						"13",
+						"56",
+						"dlcskwc7g5dfm"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
