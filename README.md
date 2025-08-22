@@ -10,6 +10,23 @@ It provides a way for farmers to sell carbon credits in the form of NFT to indus
 
 <b>Machine Learning Model, that can accurately predict the amount of carbon emission that can happen, from a field of 1 sq unit, based on the type of crop harvested, how much water is required, crop yield prediction, how well the irrigation is managed and other sustainable farming practices adopted, and based on it give the farmer a Carbon Score/credit that farmer can sell to the industry in exchange of Money/Crypto Currency </b>
 
+##  Andromeda OS Migration
+
+AgroChain has been successfully migrated to **Andromeda's Operating System (aOS)** to leverage cross-chain capabilities, modular smart contracts (ADOs), and AI-native infrastructure for enhanced carbon credit tokenization and trading.
+
+### Key Migration Benefits
+- **Cross-chain Carbon Credits**: Carbon credits can now be traded across multiple Cosmos chains
+- **AI-Powered Carbon Scoring**: Enhanced machine learning for accurate carbon emission prediction
+- **Modular Architecture**: Using Andromeda's ADO framework for composable smart contracts
+- **Real World Asset Tokenization**: Carbon credits as RWAs with fractional ownership capabilities
+
+### Andromeda OS Components
+- **Smart Contracts → ADOs**: Replaced Solidity contracts with Andromeda Application-Specific Digital Objects
+- **Ethereum → Cosmos**: Migrated from Ethereum to Cosmos ecosystem for cross-chain interoperability
+- **Ethers.js → CosmJS**: Updated frontend to use CosmJS for Cosmos blockchain interaction
+- **Hardhat → Andromeda CLI**: Switched to Andromeda's development tools
+
+For detailed information about the Andromeda OS implementation, see the [Andromeda OS Documentation](./agrochain-aos/README.md).
 
 ## Features
 - Farmer Registration.
@@ -18,6 +35,9 @@ It provides a way for farmers to sell carbon credits in the form of NFT to indus
 - User Dashboard to view all the NFT Minted, sold, and Purchased.
 - Customer/ Industries can buy NFT carbon credits to meet their ESG Goals and remain Carbon neutral companies.
 - Money in the form of Cryptocurrency is directly transferred to farmers without commission and middlemen, so they can invest the money in adopting more sustainable farming methods.
+- **Cross-chain Carbon Credit Trading** (Andromeda OS)
+- **AI-Powered Carbon Scoring** (Andromeda OS)
+- **Modular Smart Contract Architecture** (Andromeda OS)
 
 ### Live Application Demo
 
@@ -28,6 +48,22 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 <p align="center">
   <img src="DATA/AgroChain.png" />
 </p>
+
+### Andromeda OS Architecture
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Andromeda     │    │   AI Services   │
+│   (React +      │◄──►│   aOS           │◄──►│   (Carbon       │
+│   CosmJS)       │    │   (ADOs)        │    │   Prediction)   │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Keplr Wallet  │    │   Cosmos Hub    │    │   IoT Devices   │
+│   Integration   │    │   (Cross-chain) │    │   (Verification)│
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
 
 ### 2. Clone/Download the Repository
 
@@ -47,7 +83,6 @@ dotnet watch run --Rapyd.API
 <p align="center">
   <img src="DATA/dotnet_swagger_ui.png" />
 </p>
-
 
 ### 4. Install Node/React Dependencies:
 
@@ -72,7 +107,6 @@ npx hardhat node
   <img src="DATA/metamask_config.png" />
 </p>
 
-
 ### 7(a). Migrate Smart Contracts
 ```
 npx hardhat run src/backend/scripts/deploy.js --network localhost
@@ -93,6 +127,39 @@ npx hardhat test
 npm run start
 ```
 
+##  Andromeda OS Setup (Alternative Implementation)
+
+### Prerequisites for Andromeda OS
+- Node.js 18+
+- Andromeda CLI
+- Keplr Wallet
+- Go 1.19+ (for ADO compilation)
+
+### Install Andromeda CLI
+```bash
+curl -sSfL https://raw.githubusercontent.com/andromedaprotocol/andromeda/main/scripts/install.sh | sh
+```
+
+### Setup Andromeda OS Components
+```bash
+cd agrochain-aos
+npm install
+andromeda config init
+andromeda config set chain-id andromeda-1
+andromeda config set rpc-url https://rpc.andromeda-1.andromeda.zone
+```
+
+### Deploy ADOs (Andromeda Digital Objects)
+```bash
+andromeda ado deploy --path ./ados/carbon-credit
+andromeda ado deploy --path ./ados/marketplace
+andromeda ado deploy --path ./ados/auction
+```
+
+### Start Andromeda OS Frontend
+```bash
+npm start
+```
 
 ### 10. Project Architecture
 
@@ -108,7 +175,6 @@ npm run start
   <img src="DATA/screenshots/10.png" width="400"/>
 </p>
 <br />
-
 
 ### 12. Application Screenshots
 
@@ -127,6 +193,28 @@ npm run start
 </p>
 <br />
 
+##  Documentation
+
+- **Main Application**: This README
+- **Andromeda OS Implementation**: [Andromeda OS Documentation](./agrochain-aos/README.md)
+- **Smart Contracts**: [Ethereum Contracts](./agrochain/src/backend/contracts/)
+- **ADOs (Andromeda)**: [Carbon Credit ADO](./agrochain-aos/ados/carbon-credit/src/)
+
+##  Supported Networks
+
+### Ethereum Implementation
+- **Local Development**: Hardhat (localhost:8545)
+- **Testnet**: Goerli
+- **Mainnet**: Ethereum
+
+### Andromeda OS Implementation
+- **Testnet**: andromeda-testnet-1
+- **Mainnet**: andromeda-1
+- **Cross-chain**: Cosmos Hub, Osmosis, Juno, Evmos
+
+##  Contributing
+
+We welcome contributions to both the Ethereum and Andromeda OS implementations. Please see the respective documentation for contribution guidelines.
 
 ### Thank You
 
