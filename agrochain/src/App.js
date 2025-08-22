@@ -18,6 +18,10 @@ import { Register } from "./Components/Register";
 import { Front } from "./Components/Front";
 import Certificate from "./Components/Certificate/Certificate";
 import { NftContext } from "./frontend/NftContext/NftProvider";
+import CarbonMarketplace from "./Components/CarbonMarketplace";
+import AOSFarmer from "./Components/AOSFarmer";
+import AOSMintList from "./Components/AOSMintList";
+import AOSStats from "./Components/AOSStats";
 
 import './App.scss';
 import MainScreen from './Components';
@@ -107,6 +111,10 @@ function App() {
                 <Route path="nft-details" element={<NFTDetails />} />
                 <Route path="certificate" element={<Certificate />} />
                 <Route path="payment" element={<MainScreen />} />
+                <Route path="aos" element={<CarbonMarketplace />} />
+                <Route path="aos/farmer" element={<AOSFarmer />} />
+                <Route path="aos/mint" element={<AOSMintList />} />
+                <Route path="aos/stats" element={<AOSStats />} />
                 <Route path="*" element={<Front />} />
             </Routes>
         </>

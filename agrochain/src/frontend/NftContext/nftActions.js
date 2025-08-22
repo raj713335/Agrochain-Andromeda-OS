@@ -4,3 +4,6 @@ export const SET_NFT = 'SET_NFT';
 export const SET_BALANCE = 'SET_BALANCE';
 export const SET_LOADING = 'SET_LOADING';
 export const SET_ACCOUNT_TYPE = 'SET_ACCOUNT_TYPE';
+export const SET_AOS_CLIENT = 'SET_AOS_CLIENT';
+export const SET_AOS_ADDRESS = 'SET_AOS_ADDRESS';
+export const SET_CARBON_ADO_ADDRESS = 'SET_CARBON_ADO_ADDRESS';

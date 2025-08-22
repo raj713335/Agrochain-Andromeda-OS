@@ -4,7 +4,7 @@ import { NftContext } from '../frontend/NftContext/NftProvider';
 import farmer from './farmer.png'
 
 const Navigation = ({ web3Handler }) => {
-    const { account, setAccount, accountType, setAccountType } = useContext(NftContext);
+    const { account, setAccount, accountType, setAccountType, connectAOS, aosAddress } = useContext(NftContext);
     const navigate = useNavigate();
 
     const logout = () => {
@@ -37,6 +37,15 @@ const Navigation = ({ web3Handler }) => {
                         <NavLink className={({ isActive }) => `nav-link ${isActive ? "active-route" : ""}`} to={`/nft`}> NFT</NavLink>
                     </li>
                     <li className="nav-item">
+                        <NavLink className={({ isActive }) => `nav-link ${isActive ? "active-route" : ""}`} to={`/aos`}> aOS Market</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className={({ isActive }) => `nav-link ${isActive ? "active-route" : ""}`} to={`/aos/farmer`}> aOS Farmer</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className={({ isActive }) => `nav-link ${isActive ? "active-route" : ""}`} to={`/aos/stats`}> aOS Stats</NavLink>
+                    </li>
+                    <li className="nav-item">
                         <button onClick={web3Handler} className="nav-btn btn btn-warning btn-sm btn-block ms-2"><i className="fa fa-ambulance fa-fw"></i> <a href={`https://sandboxcheckout.rapyd.net?token=checkout_12b1f2bffaf6422dd939234754c23f06`} target="_blank"
                             rel="noopener noreferrer" >Donate Us </a></button>
                     </li>
@@ -48,6 +57,7 @@ const Navigation = ({ web3Handler }) => {
                             rel="noopener noreferrer" > {account.slice(0, 5) + '...' + account.slice(38, 42)}</a></button>
                             <button onClick={logout} className="nav-btn btn btn-danger btn-sm btn-block ms-2"><i className="fa fa-sign-out-alt fa-fw"></i> Disconnect Wallet </button></>) : (
                             <button onClick={web3Handler} className="nav-btn btn btn-success btn-sm btn-block ms-2"><i className="fa fa-user-plus fa-fw"></i> Connect Wallet </button>)}
+                        <button onClick={() => connectAOS().catch(()=>{})} className="nav-btn btn btn-info btn-sm btn-block ms-2"><i className="fa fa-plug fa-fw"></i> {aosAddress ? 'Keplr Connected' : 'Connect Keplr (aOS)'} </button>
                     </li>
                 </ul>
             </div>
