@@ -39,9 +39,6 @@ For detailed information about the Andromeda OS implementation, see the [Androme
 - **AI-Powered Carbon Scoring** (Andromeda OS)
 - **Modular Smart Contract Architecture** (Andromeda OS)
 
-### Live Application Demo
-
-For video demostration refer to the YouTube link <a href="https://www.youtube.com/watch?v=eBz3w8_5sUw">here.</a> 
 
 ## 1. Project Architecture
 
@@ -68,7 +65,7 @@ For video demostration refer to the YouTube link <a href="https://www.youtube.co
 ### 2. Clone/Download the Repository
 
 ```
-git clone https://github.com/IntelegixLabs/AgroChain
+git clone https://github.com/raj713335/Agrochain-Andromeda-OS
 ```
 
 ### 3. Run the .NET Backend Application (fetches the historical pollution data from a public API):
